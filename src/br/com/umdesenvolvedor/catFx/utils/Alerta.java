@@ -1,0 +1,13 @@
+package br.com.umdesenvolvedor.catFx.utils;
+
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
+public class Alerta {
+
+	public static void alerta(String mensagem, AlertType alertType) {
+		Alert alert = new Alert(alertType);
+		alert.setContentText(mensagem);
+		alert.show();
+	}
+}
