@@ -9,6 +9,7 @@ public class Mensagens {
 
 	public Mensagens() {
 		mensagem.put(001, "Dados de usuário incorretos, verifique!");
+		mensagem.put(002, "Erro inesperado, chame o suporte!");
 	}
 	
 	public static synchronized Mensagens getInstance() {

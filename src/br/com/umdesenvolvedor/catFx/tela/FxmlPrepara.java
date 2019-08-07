@@ -13,7 +13,7 @@ public class FxmlPrepara {
 	private Scene scene;
 	private String estiloCss = "/css/estilo.css";
 
-	public Scene preparaScene(String fxml, Callback<Class<?>, Object> controllerSpring) {
+	public Scene preparaScene(String fxml, Callback<Class<?>, Object> controllerSpring, int largura, int altura) {
 
 		try {
 			parent = preparaFxml(fxml, controllerSpring).load();
@@ -21,10 +21,15 @@ public class FxmlPrepara {
 			e.printStackTrace();
 		}
 
-		scene = new Scene(parent);
+		scene = new Scene(parent, largura, altura);
 		scene.getStylesheets().add(estiloCss);
 
 		return scene;
+	}
+	
+	public Scene preparaScene(String fxml, Callback<Class<?>, Object> controllerSpring) {
+
+		return preparaScene(fxml, controllerSpring, -1, -1);
 	}
 	
 	public FXMLLoader preparaFxml(String fxml, Callback<Class<?>, Object> controllerSpring) {
