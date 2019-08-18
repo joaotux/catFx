@@ -11,7 +11,7 @@ public class FxmlPrepara {
 	private FXMLLoader fxmlLoader;
 	private Parent parent;
 	private Scene scene;
-	private String estiloCss = "/css/estilo.css";
+	private String estiloCss = "/estilo.css";
 
 	public Scene preparaScene(String fxml, Callback<Class<?>, Object> controllerSpring, int largura, int altura) {
 

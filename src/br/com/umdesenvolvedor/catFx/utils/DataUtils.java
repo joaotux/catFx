@@ -3,6 +3,8 @@ package br.com.umdesenvolvedor.catFx.utils;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class DataUtils {
@@ -38,5 +40,17 @@ public class DataUtils {
 	
 	public static String formataData(Date data) {
 		return formataData(data, null);
+	}
+	
+	public static String formatLocalDateToString(LocalDate data, String mascara) {
+		mascara = mascara != null ? mascara : "dd/MM/yyyy";
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(mascara);
+		
+		return data.format(formatter);
+	}
+	
+	public static String formatLocalDateToString(LocalDate data) {
+		return formatLocalDateToString(data, null);
 	}
 }
