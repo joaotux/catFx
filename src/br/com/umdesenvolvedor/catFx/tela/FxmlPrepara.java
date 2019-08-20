@@ -28,7 +28,6 @@ public class FxmlPrepara {
 	}
 	
 	public Scene preparaScene(String fxml, Callback<Class<?>, Object> controllerSpring) {
-
 		return preparaScene(fxml, controllerSpring, -1, -1);
 	}
 	

@@ -119,6 +119,42 @@ public abstract class MaskFieldUtil {
 			}
 		});
 	}
+	
+	public static void timeField(final TextField textField) {
+		textField.setAlignment(Pos.CENTER_LEFT);
+		textField.lengthProperty().addListener(new ChangeListener<Number>() {
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				String value = textField.getText();
+				value = value.replaceAll("[^0-9]", "");
+				value = value.replaceAll("([0-9]{2})([0-9]{2})$", "$1:$2");
+				textField.setText(value);
+				positionCaret(textField);
+
+				textField.textProperty().addListener(new ChangeListener<String>() {
+					@Override
+					public void changed(ObservableValue<? extends String> observableValue, String oldValue,
+							String newValue) {
+						if (newValue.length() > 5)
+							textField.setText(oldValue);
+					}
+				});
+			}
+		});
+
+		textField.focusedProperty().addListener(new ChangeListener<Boolean>() {
+			@Override
+			public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean,
+					Boolean fieldChange) {
+				if (!fieldChange) {
+					final int length = textField.getText().length();
+					if (length > 0 && length < 3) {
+						textField.setText(textField.getText() + "00");
+					}
+				}
+			}
+		});
+	}
 
 	/**
 	 * Monta as mascara para CPF/CNPJ. A mascara eh exibida somente apos o campo

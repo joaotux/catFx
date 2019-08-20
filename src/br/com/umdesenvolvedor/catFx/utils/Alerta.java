@@ -9,5 +9,9 @@ public class Alerta {
 		Alert alert = new Alert(alertType);
 		alert.setContentText(mensagem);
 		alert.show();
+
+		if (alertType.equals(AlertType.ERROR) || alertType.equals(AlertType.WARNING)) {
+			throw new RuntimeException(mensagem);
+		}
 	}
 }
