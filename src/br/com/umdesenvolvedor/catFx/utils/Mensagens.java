@@ -19,21 +19,27 @@ public class Mensagens {
 		mensagem.put(9, "Quantidade é obrigatória!");
 		mensagem.put(10, "Data é obrigatória!");
 		mensagem.put(11, "Produto é obrigatório!");
-		
+		mensagem.put(12, "Caixa é obrigatório!");
+		mensagem.put(13, "Ano é obrigatório!");
+		mensagem.put(14, "Mês é obrigatório!");
+		mensagem.put(15, "Situação é obrigatória!");
+		mensagem.put(16, "Número é obrigatório!");
+		mensagem.put(17, "Tipo é obrigatório!");
+
 		mensagem.put(200, "Dados salvos com sucesso!");
 		mensagem.put(201, "Operação realizada com sucesso!");
-		
+
 		mensagem.put(300, "Deseja mesmo remover este registro?");
 	}
-	
+
 	public static synchronized Mensagens getInstance() {
-		if(instancia == null) {
+		if (instancia == null) {
 			instancia = new Mensagens();
 		}
-		
+
 		return instancia;
 	}
-	
+
 	public String getMensager(Integer chave) {
 		return mensagem.get(chave);
 	}

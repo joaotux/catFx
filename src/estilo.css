@@ -97,6 +97,46 @@
 	-fx-background-color: #F4F4F4;
 }
 
+.btnAdd {
+	-fx-background-image: url(ic_add.png);
+	-fx-background-size: 45px;
+	-fx-background-repeat: no-repeat; 
+	-fx-alignment: center; 
+	-fx-background-color: #F4F4F4;
+}
+
+.btnOk {
+	-fx-background-image: url(ic_ok.png);
+	-fx-background-size: 45px;
+	-fx-background-repeat: no-repeat; 
+	-fx-alignment: center; 
+	-fx-background-color: #F4F4F4;
+}
+
+.btnEditar {
+	-fx-background-image: url(ic_editar.png);
+	-fx-background-size: 45px;
+	-fx-background-repeat: no-repeat; 
+	-fx-alignment: center;  
+	-fx-background-color: #F4F4F4;
+}
+
+.btnRemover {
+	-fx-background-image: url(ic_remover.png);
+	-fx-background-size: 45px;
+	-fx-background-repeat: no-repeat; 
+	-fx-alignment: center;  
+	-fx-background-color: #F4F4F4;
+}
+
+.btnImprimir {
+	-fx-background-image: url(ic_imprimir.png);
+	-fx-background-size: 45px;
+	-fx-background-repeat: no-repeat; 
+	-fx-alignment: center;  
+	-fx-background-color: #F4F4F4;
+}
+
 /********************************* TABLE VIEW ***********************************/
 .table-view .column-header {
     -fx-background-color: #005b9f;

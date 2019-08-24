@@ -14,9 +14,9 @@ public class Propriedades {
 	public static Properties getPropriedades() {
 
 		try {
-
-			file = new FileInputStream(new File("").getAbsoluteFile() + "/dados.properties");
 			
+			file = new FileInputStream(new File("").getAbsoluteFile() + "/dados.properties");
+
 			prop.load(file);
 
 		} catch (IOException e) {

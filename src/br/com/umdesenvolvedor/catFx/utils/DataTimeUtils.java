@@ -8,8 +8,6 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.Locale;
-import java.util.TimeZone;
 
 public class DataTimeUtils {
 
@@ -69,5 +67,50 @@ public class DataTimeUtils {
 			horas = "00:00:00";
 
 		return LocalTime.parse(horas);
+	}
+
+	public static String getMesExtenso(String mes) {
+
+		switch (mes) {
+		case "01":
+			return "JANEIRO";
+
+		case "02":
+
+			return "FEVEREIRO";
+		case "03":
+
+			return "MARÇO";
+		case "04":
+
+			return "ABRIL";
+		case "05":
+
+			return "MAIO";
+		case "06":
+
+			return "JUNHO";
+		case "07":
+
+			return "JULHO";
+		case "08":
+
+			return "AGOSTO";
+		case "09":
+
+			return "SETEMBRO";
+		case "10":
+
+			return "OUTUBRO";
+		case "11":
+
+			return "NOVEMBRO";
+		case "12":
+
+			return "DEZEMBRO";
+
+		default:
+			return "";
+		}
 	}
 }
