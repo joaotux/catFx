@@ -26,6 +26,7 @@ public class Mensagens {
 		mensagem.put(16, "Número é obrigatório!");
 		mensagem.put(17, "Tipo é obrigatório!");
 		mensagem.put(18, "Série é obrigatória!");
+		mensagem.put(19, "Nenhum dado encontrado!");
 
 		mensagem.put(200, "Dados salvos com sucesso!");
 		mensagem.put(201, "Operação realizada com sucesso!");

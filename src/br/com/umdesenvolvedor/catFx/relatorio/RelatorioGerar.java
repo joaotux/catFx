@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.sql.DataSource;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 
 import br.com.umdesenvolvedor.catFx.utils.Propriedades;
@@ -18,7 +19,7 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
 import net.sf.jasperreports.swing.JRViewer;
 
-public class RelatorioGerar extends JFrame {
+public class RelatorioGerar extends JDialog {
 	private static final long serialVersionUID = 1L;
 
 	TelaConfigSingleton tela = TelaConfigSingleton.getInstance();
@@ -120,6 +121,7 @@ public class RelatorioGerar extends JFrame {
 		this.add(view);
 		this.setSize(telaLargura, telaAltura);
 		this.setVisible(true);
+		this.setAlwaysOnTop(true);
 	}
 
 }
