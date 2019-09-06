@@ -192,6 +192,26 @@ public abstract class MaskFieldUtil {
 
 		maxField(textField, 18);
 	}
+	
+	/**
+	 * Monta as mascara para CPF.
+	 *
+	 * @param textField TextField
+	 */
+	public static void cpfField(final TextField textField) {
+
+		textField.lengthProperty().addListener(new ChangeListener<Number>() {
+			@Override
+			public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+				String value = textField.getText();
+				value = value.replaceAll("[^0-9]", "");
+				value = value.replaceFirst("([0-9]{3})([0-9]{3})([0-9]{3})([0-9]{2})", "$1.$2.$3-$4");
+				textField.setText(value);
+				positionCaret(textField);
+			}
+		});
+		maxField(textField, 14);
+	}
 
 	/**
 	 * Monta a mascara para os campos CNPJ.
@@ -215,6 +235,27 @@ public abstract class MaskFieldUtil {
 			}
 		});
 
+	}
+	
+	/**
+	 * Monta a mascara para telefones.
+	 *
+	 * @param textField TextField
+	 */
+	public static void telefoneField(final TextField textField) {
+		textField.setAlignment(Pos.CENTER_LEFT);
+		textField.lengthProperty().addListener(new ChangeListener<Number>() {
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				String value = textField.getText();
+				value = value.replaceAll("[^-?0-9]", "");
+				value = value.replaceAll("([0-9]{2})([-?0-9]{7})", "($1)$2");
+				textField.setText(value);
+				positionCaret(textField);
+			}
+		});
+		
+		maxField(textField, 14);
 	}
 
 	/**
