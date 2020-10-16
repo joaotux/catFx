@@ -8,6 +8,7 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class DataTimeUtils {
 
@@ -67,6 +68,24 @@ public class DataTimeUtils {
 			horas = "00:00:00";
 
 		return LocalTime.parse(horas);
+	}
+
+	public static LocalDate incrementaData(int campo, int valor, LocalDate dataOrigem) {
+		GregorianCalendar gcal = new GregorianCalendar();
+
+		try {
+			Date data = Date.from(dataOrigem.atStartOfDay(ZoneId.systemDefault()).toInstant());
+			gcal.setTime(data);
+			gcal.add(campo, valor);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return dateParaLocalDate(new Date(gcal.getTime().getTime()));
+	}
+
+	public static LocalDate dateParaLocalDate(Date date) {
+		return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 	}
 
 	public static String getMesExtenso(String mes) {
