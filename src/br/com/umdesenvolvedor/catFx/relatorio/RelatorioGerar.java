@@ -8,7 +8,7 @@ import java.util.Map;
 import javax.sql.DataSource;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
-
+/*
 import br.com.umdesenvolvedor.catFx.utils.Propriedades;
 import br.com.umdesenvolvedor.catFx.utils.TelaConfigSingleton;
 import net.sf.jasperreports.engine.JRDataSource;
@@ -125,3 +125,4 @@ public class RelatorioGerar extends JDialog {
 	}
 
 }
+*/
